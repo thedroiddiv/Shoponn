@@ -1,0 +1,27 @@
+.carousel {
+    height: 40vh;
+}
+
+.card-img {
+    height: 100%;
+}
+
+.carousel-caption {
+    z-index: 2;
+}
+
+.darkbg {
+    background-color: #161616;
+}
+
+.overlay {
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+    overflow: hidden;
+    background: #0a0c14a1; 
+    background-size: cover;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
