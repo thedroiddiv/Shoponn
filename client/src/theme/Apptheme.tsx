@@ -7,6 +7,7 @@ type ApplicationTheme = {
         backgroundColor: string,
         textColor: string,
         topBarColor:string,
+        cartBtnVarient:string
 
         topBarVarient:"light" | "dark",
         topBarText:string,
@@ -31,12 +32,14 @@ type ApplicationTheme = {
 const DarkTheme: ApplicationTheme =
 {
     bootstrap: {
-        backgroundColor: "darkbg",
+        backgroundColor: "bg-dark",
         textColor: "text-light",
         topBarColor:"dark",
         topBarVarient:"dark",
         topBarText:"text-light",
         selectedTabColor:"text-warning",
+        cartBtnVarient:"outline-warning",
+
 
         productCard : {
             btnVarient:"warning",
@@ -66,7 +69,10 @@ const LightTheme: ApplicationTheme =
         topBarColor:"light",
         topBarVarient:"light",
         topBarText:"text-secondary",
-        selectedTabColor:"text-dark",
+        selectedTabColor:"text-primary",
+        cartBtnVarient:"primary",
+
+        
 
         productCard : {
             btnVarient:"warning",
@@ -82,6 +88,5 @@ const LightTheme: ApplicationTheme =
             textColor:"text-dark",
             secondaryColor:"text-muted"
         }
-       
     }
 }

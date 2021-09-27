@@ -1,12 +1,15 @@
 import { useContext } from 'react'
 import ProductCard from '../../components/ProductCard';
-import { HomeProps } from './home.props'
 import { ThemeContext } from '../../theme/Context';
 import { getTheme } from "../../theme/Apptheme"
 import { Product } from '../../data/models/product';
 import Featured from '../../components/Featured';
 
 
+export interface HomeProps {
+    featured: Product[];
+    products: Product[];
+}
 
 function Home() {
     const { bootstrap } = getTheme(useContext(ThemeContext)[0])
@@ -29,7 +32,7 @@ function Home() {
 
 
 
-const { featured, products }: HomeProps = {
+export const { featured, products }: HomeProps = {
     featured: [
         {
             name: "Lorem ipsum dolor sit",
