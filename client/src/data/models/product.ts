@@ -1,16 +1,18 @@
-export interface Product  {
-    name: string,
-    description: string,
-    price: number,
-    featureImage: string,
-    images: string[]
+export interface Product {
+    _id: string
+    name: string;
+    description: string;
+    price: number;
+    category: string;
+    stock: number;
 }
 
 export interface CartProduct {
-    name: string,
-    description: string,
-    price: number,
-    featureImage: string,
-    images: string[],
-    quantity:number
+    _id: string
+    name: string;
+    description: string;
+    price: number;
+    category: string;
+    stock: number;
+    quantity: number
 }

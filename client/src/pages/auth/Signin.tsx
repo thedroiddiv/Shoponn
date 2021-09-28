@@ -3,9 +3,8 @@ import { Button, Col, Container, Form, ToastContainer } from 'react-bootstrap'
 import { ThemeContext } from '../../theme/Context';
 import { getTheme } from "../../theme/Apptheme"
 import { LoginUserDto } from '../../data/dto/UserDto';
-import { authenticate, signin } from './helper/auth.helper';
+import { authenticate, isAuthenticated, signin } from './helper/auth.helper';
 import { toast } from 'react-toastify';
-
 import { History } from 'history';
 
 
@@ -13,7 +12,7 @@ interface SigninProps {
     history: History
 }
 
-function Signin({history}:SigninProps) {
+function Signin({ history }: SigninProps) {
 
     const { bootstrap } = getTheme(useContext(ThemeContext)[0])
     const [values, setValues] = useState<LoginUserDto>({ email: "", password: "" })
@@ -36,9 +35,12 @@ function Signin({history}:SigninProps) {
                 } else {
                     authenticate(res.data, () => {
                         setValues({ email: "", password: "" })
-                        setTimeout(() => {
-                            history.push("/user/profile")
-                        }, 1000);
+                        const user = isAuthenticated()
+                        if (user?.role === 1) {
+                            history.push("/admin/dashboard")
+                        } else if (user?.role === 0) {
+                            history.push("/user/dashboard")
+                        }
                     })
                 }
             })
@@ -48,7 +50,7 @@ function Signin({history}:SigninProps) {
     return (
         <div className={`${bootstrap.backgroundColor} ${bootstrap.textColor}`} style={{ minHeight: "70vh" }}>
             <Container>
-                <ToastContainer/>
+                <ToastContainer />
                 <Col className="mx-auto py-5" lg={6}>
                     <h3>Enter your credentials</h3>
                     <Form className="mt-5">

@@ -7,7 +7,11 @@ type ApplicationTheme = {
         backgroundColor: string,
         textColor: string,
         topBarColor:string,
-        cartBtnVarient:string
+        cartBtnVarient:string,
+        cardBackground:string,
+        outlineBtnVarient:"secondary" | "light"
+        cardBtnVarient:string,
+
 
         topBarVarient:"light" | "dark",
         topBarText:string,
@@ -39,6 +43,10 @@ const DarkTheme: ApplicationTheme =
         topBarText:"text-light",
         selectedTabColor:"text-warning",
         cartBtnVarient:"outline-warning",
+        cardBackground:"bg-secondary",
+        outlineBtnVarient:"light",
+        cardBtnVarient:"warning",
+
 
 
         productCard : {
@@ -71,7 +79,10 @@ const LightTheme: ApplicationTheme =
         topBarText:"text-secondary",
         selectedTabColor:"text-primary",
         cartBtnVarient:"primary",
+        cardBackground:"bg-white",
+        cardBtnVarient:"primary",
 
+        outlineBtnVarient:"secondary",
         
 
         productCard : {

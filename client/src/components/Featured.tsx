@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Carousel, Ratio } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import { getImage } from '../data/api/coreApiCalls';
 import { Product } from '../data/models/product'
 
 interface FeaturedProps {
@@ -22,7 +23,7 @@ function Featured({ products }: FeaturedProps) {
                         <div>
                             <img
                                 className="d-block w-100"
-                                src={product.featureImage}
+                                src={getImage(product._id)}
                                 alt="product"
                             />
                             <div className="card-img-overlay overlay">

@@ -55,3 +55,15 @@ export function isAuthenticated(): User | null {
         return null;
     }
 }
+
+export function getToken(): string {
+    if (typeof window == 'undefined') {
+        return "";
+    }
+    const token = localStorage.getItem('jwt')
+    if (token !== null) {
+        return JSON.parse(token).token as string
+    } else {
+        return "";
+    }
+}

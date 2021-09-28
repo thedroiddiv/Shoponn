@@ -9,8 +9,7 @@ import { getTheme } from "../theme/Apptheme"
 import { isAuthenticated } from '../pages/auth/helper/auth.helper'
 
 
-
-type Props = {
+interface Props {
     history: History
 };
 
@@ -41,7 +40,8 @@ function Topbar({ history }: Props) {
                             <Nav.Link><Link style={{ textDecoration: "none" }} className={`${currentTab("/cart")}`} to="/cart"> Cart</Link></Nav.Link>
                             {isAuthenticated() ? (
                                 <>
-                                    <Nav.Link><Link style={{ textDecoration: "none" }} className={`${currentTab("/user/profile")}`} to="/user/profile"> Profile</Link></Nav.Link>
+                                    {isAuthenticated()?.role === 0 && <Nav.Link><Link style={{ textDecoration: "none" }} className={`${currentTab("/user/dashboard")}`} to="/user/dashboard"> Dashboard</Link></Nav.Link>}
+                                    {isAuthenticated()?.role === 1 && <Nav.Link><Link style={{ textDecoration: "none" }} className={`${currentTab("/admin/dashboard")}`} to="/admin/dashboard"> Dashboard</Link></Nav.Link>}
                                     <Nav.Link><Link style={{ textDecoration: "none" }} className={`${currentTab("/signout")}`} to="/signout"> Signout</Link></Nav.Link>
                                 </>
                             ) : (

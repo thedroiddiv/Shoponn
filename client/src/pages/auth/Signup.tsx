@@ -5,13 +5,11 @@ import { getTheme } from "../../theme/Apptheme"
 import { CreateUserDto } from '../../data/dto/UserDto';
 import { signup } from './helper/auth.helper';
 import { toast, ToastContainer } from 'react-toastify';
-import { Redirect } from 'react-router';
 import { History } from 'history';
 
 interface SignupProps {
     history: History
 }
-
 
 function Signup({ history }: SignupProps) {
 

@@ -10,7 +10,12 @@ import { ThemeContext } from '../theme/Context';
 import ProductDetails from '../pages/product/ProductDetails';
 import Signout from '../pages/auth/Signout';
 import ProtectedRoute from './ProtectedRoute';
-import UserProfile from '../pages/auth/user/UserProfile';
+import UserDashboard from '../pages/auth/user/UserDashboard';
+import AdminRoute from './AdminRoute';
+import AdminDashboard from '../pages/auth/admin/AdminDashboard';
+import AddProduct from '../pages/auth/admin/AddProduct';
+import ManageProducts from '../pages/auth/admin/ManageProducts';
+import ManageCategories from '../pages/auth/admin/ManageCategories';
 
 function Routes() {
     const themeHook = useState(useContext(ThemeContext)[0]);
@@ -28,7 +33,14 @@ function Routes() {
                             <Route path="/signout" exact component={Signout} />
                             <Route path="/cart" exact component={Cart} />
                             <Route path="/product/:id" exact component={ProductDetails} />
-                            <ProtectedRoute path="/user/profile/" exact component={UserProfile} />
+
+                            <AdminRoute path="/admin/dashboard/" exact component={AdminDashboard} />
+                            <AdminRoute path="/admin/product/add/" exact component={AddProduct} />
+                            <AdminRoute path="/admin/product/manage/" exact component={ManageProducts} />
+                            <AdminRoute path="/admin/category/manage" exact component={ManageCategories} />
+
+                            <ProtectedRoute path="/user/dashboard/" exact component={UserDashboard} />
+
                         </Switch>
                     </div>
                     <Footer />

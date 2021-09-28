@@ -13,8 +13,7 @@ function createProduct(req, res) {
             console.log(err);
             return res.status(406).json({ error: "error" });
         }
-
-
+        
         // destructure 
         const { name, description, price, category, stock } = fields
         if (!name || !description || !price || !category || !stock) {

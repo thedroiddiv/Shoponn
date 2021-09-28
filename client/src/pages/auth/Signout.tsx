@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { ThemeContext } from '../../theme/Context';
 import { getTheme } from "../../theme/Apptheme"
 import { signout } from './helper/auth.helper';
-import { toast } from 'react-toastify';
 import { History } from 'history';
 
 

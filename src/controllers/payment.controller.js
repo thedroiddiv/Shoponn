@@ -30,7 +30,7 @@ exports.processPayment = (req, res) => {
         }
     }, (err, result) => {
         if (err) {
-            console.log(err);
+            console.log("processPayment/"+err);
             return res.status(500).send(err)
         } else {
             res.json(result)
