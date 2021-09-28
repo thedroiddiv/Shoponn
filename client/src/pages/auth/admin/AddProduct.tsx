@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Col, Container, Form } from 'react-bootstrap'
 import { toast, ToastContainer } from 'react-toastify'
-import {  createProduct } from '../../../data/api/adminApiCalls'
+import { createProduct } from '../../../data/api/adminApiCalls'
 import { getAllCategory } from '../../../data/api/coreApiCalls'
 import { CreateProductDto } from '../../../data/dto/ProductDto'
 import { Category } from '../../../data/models/category'
@@ -10,7 +10,7 @@ import { ThemeContext } from '../../../theme/Context'
 import { getToken, isAuthenticated } from '../helper/auth.helper'
 
 function AddProduct() {
-    const [values, setValues] = useState<CreateProductDto>({ name: "", description: "", price: 0, category: "", stock: 0, photo:File })
+    const [values, setValues] = useState<CreateProductDto>({ name: "", description: "", price: 0, category: "", stock: 0, photo: File })
     const [categories, setCategories] = useState<Category[]>([]);
     const { name, description, price, category, stock, photo } = values;
     const { bootstrap } = getTheme(useContext(ThemeContext)[0])
@@ -24,7 +24,7 @@ function AddProduct() {
     const handleChange = (name: string) => (event: any) => {
         const value = (name === "photo") ? event.target.files[0] : event.target.value
         console.log(name);
-        
+
         setValues({
             ...values,
             [name]: value
@@ -40,7 +40,7 @@ function AddProduct() {
         formData.set('price', price.toString())
         formData.set('category', category);
         formData.set('stock', stock.toString());
-        formData.set('photo',photo);
+        formData.set('photo', photo);
 
 
         if (user !== null) {
@@ -48,6 +48,7 @@ function AddProduct() {
                 .then(res => {
                     console.log("AddProduct/handleSubmit/" + JSON.stringify(res));
                     toast("Product added!")
+                    setValues({ name: "", description: "", price: 0, category: "", stock: 0, photo: File })
                 })
                 .catch(error => console.log("AddProduct/handleSubmit/" + JSON.stringify(error)))
         }
@@ -56,7 +57,7 @@ function AddProduct() {
     return (
         <div className={`${bootstrap.backgroundColor} ${bootstrap.textColor} `} style={{ minHeight: "75vh" }}>
             <Container>
-                <ToastContainer/>
+                <ToastContainer />
                 <Col className="mx-auto py-2" lg={6}>
                     <h3>Enter product details</h3>
                     <Form className="mt-3">
@@ -87,7 +88,7 @@ function AddProduct() {
                         </Form.Group>
                         <Form.Group controlId="formFileMultiple" className="pb-3 my-auto">
                             <Form.Label>Choose Photos</Form.Label>
-                            <Form.Control type="file"  onChange={handleChange('photo')} />
+                            <Form.Control type="file" onChange={handleChange('photo')} />
                         </Form.Group>
                         <Button variant="primary" onClick={handleSubmit}>
                             Submit

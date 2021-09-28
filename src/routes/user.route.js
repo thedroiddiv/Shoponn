@@ -7,7 +7,7 @@ router.param("userId", getUserById)
 
 //READ
 router.get("/user/:userId", isSignedIn, isAuthenticated, getUser)
-router.get("/user",isSignedIn,isAuthenticated,isAdmin, getAllUser)
+router.get("/user/:userId/all",isSignedIn,isAuthenticated,isAdmin, getAllUser)
 
 //UPDATE
 router.put("/user/:userId", isSignedIn, isAuthenticated, updateUser)

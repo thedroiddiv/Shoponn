@@ -5,12 +5,14 @@ export const getTheme = (isDarkMode: boolean): ApplicationTheme => (isDarkMode ?
 type ApplicationTheme = {
     bootstrap: {
         backgroundColor: string,
+        backgroundColorSec:string
         textColor: string,
         topBarColor:string,
         cartBtnVarient:string,
         cardBackground:string,
         outlineBtnVarient:"secondary" | "light"
         cardBtnVarient:string,
+
 
 
         topBarVarient:"light" | "dark",
@@ -36,14 +38,15 @@ type ApplicationTheme = {
 const DarkTheme: ApplicationTheme =
 {
     bootstrap: {
-        backgroundColor: "bg-dark",
+        backgroundColor: "dark-bg",
+        backgroundColorSec:"bg-dark",
         textColor: "text-light",
         topBarColor:"dark",
         topBarVarient:"dark",
         topBarText:"text-light",
         selectedTabColor:"text-warning",
         cartBtnVarient:"outline-warning",
-        cardBackground:"bg-secondary",
+        cardBackground:"bg-dark",
         outlineBtnVarient:"light",
         cardBtnVarient:"warning",
 
@@ -72,8 +75,8 @@ const LightTheme: ApplicationTheme =
 {
     bootstrap: {
         backgroundColor: "bg-light",
+        backgroundColorSec:"bg-white",
         textColor: "text-dark",
-
         topBarColor:"light",
         topBarVarient:"light",
         topBarText:"text-secondary",

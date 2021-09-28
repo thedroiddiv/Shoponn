@@ -30,7 +30,7 @@ export function setQuantity(product: CartProduct, quantity: number,next:()=>void
             cart = JSON.parse(localStorage.getItem("cart") + "")
         }
         product.quantity = quantity
-        const newList = cart.map(p => p._id==product._id ? product : p)
+        const newList = cart.map(p => p._id===product._id ? product : p)
         localStorage.setItem("cart", JSON.stringify(newList))
         next();
     }

@@ -37,7 +37,7 @@ function Payment({products,refresh}:Paymentprops) {
         }
     }
 
-    useEffect(() => { getPayToken() }, [])
+    useEffect(() => { getPayToken() })
 
 
     const onPurchase = () => {
@@ -48,7 +48,7 @@ function Payment({products,refresh}:Paymentprops) {
                     nonce = data.nonce
                     const paymentData = {
                         paymentMethodNonce: nonce,
-                        amount: getAmount()
+                        amount:0
                     }
                     processPayment(user._id, token, paymentData)
                         .then(res => {
@@ -71,14 +71,6 @@ function Payment({products,refresh}:Paymentprops) {
         }
     }
 
-    const getAmount = () => {
-        let amount = 0;
-        products.map(product => {
-            amount += (product.price * product.quantity)
-        })
-        return amount
-    }
-
     const btDropIn = () => {
         return (
             <div>
@@ -93,7 +85,7 @@ function Payment({products,refresh}:Paymentprops) {
                                     instance = inst
                                 }}
                             />
-                            <div className="btn btn-primary" onClick={() => { onPurchase() }}>Buy @ Rs.<span>{getAmount()}</span></div>
+                            <div className="btn btn-primary" onClick={() => { onPurchase() }}>Buy @ Rs.<span>{0}</span></div>
                         </div>
                     ) :
                     (

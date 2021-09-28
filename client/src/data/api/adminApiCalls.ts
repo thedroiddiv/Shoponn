@@ -1,8 +1,5 @@
-import axios from "axios";
 import { API } from "../../app.config";
 import { CreateCategoryDto } from '../dto/CategoryDto'
-import { CreateProductDto } from "../dto/ProductDto";
-import { Product } from "../models/product";
 
 
 export const createCategory = (userId: string, token: string, category: CreateCategoryDto) => {
@@ -25,7 +22,7 @@ export const createCategory = (userId: string, token: string, category: CreateCa
 }
 
 /***************************** PRODUCT ****************************/
-export const createProduct = (userId:string, token:string, product:FormData) => {
+export const createProduct = (userId: string, token: string, product: FormData) => {
     return fetch(`${API}/product/create/${userId}`,
         {
             method: 'POST',
@@ -33,7 +30,7 @@ export const createProduct = (userId:string, token:string, product:FormData) => 
             {
                 Accept: 'application/json',
                 Authorization: `Bearer ${token}`,
-                
+
             },
             body: product
         }
@@ -74,3 +71,17 @@ export const deleteProduct = (productId: string, userId: string, token: string) 
 }
 /******************************** PRODUCT *********************************/
 
+
+/******************************** USER ********************************/
+export function getAllUsers(userId: string, token: string) {
+    return fetch(`${API}/user/${userId}/all`,
+        {
+            method: "GET",
+            headers: {
+                Accept: 'application/json',
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        .then(res => res.json())
+        .catch(error => { console.log("adminapicall/getAllUser/" + error) })
+}
