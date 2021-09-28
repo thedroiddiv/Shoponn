@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "start": "node src/app.js",
+    "prod": "cd client/ && npm run build && cd ../ && node src/app.js",
     "dev": "nodemon src/app.js",
-    "build": "tsc --project ./"
+    "start":"node scr/app.js"
   },
   "author": "divyansh",
   "license": "ISC",
