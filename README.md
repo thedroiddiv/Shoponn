@@ -1,4 +1,16 @@
 # Shoponn
+
+### Required environment variables
+<ul>
+<li>NODE_ENVIRONMENT=[production or development]</li>
+<li>SECRET_KEY=[secretkey]</li>
+<li>DATABASE_URL=[mongodb://localhost:27017/test]</li>
+<li>BRAINTREE_PUBLIC_KEY=[************]</li>
+<li>BRAINTREE_PRIVATE_KEY=[***********]</li>
+<li>BRAINTREE_MERCHANT_ID=[***********]</li>
+</ul>
+
+
 ### To start the project in development mode
 <ol>
 <li>inside root package, run</li>
