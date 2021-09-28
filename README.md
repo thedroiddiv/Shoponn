@@ -9,7 +9,7 @@
 <li>BRAINTREE_PRIVATE_KEY=[***********]</li>
 <li>BRAINTREE_MERCHANT_ID=[***********]</li>
 </ul>
-
+git 
 
 ### To start the project in development mode
 <ol>
@@ -26,3 +26,21 @@
 <li>"npm run prod"</li>
 <li>project will be available to run at localhost</li>
 </ol>
+
+### Samples
+<div>
+<img src="samples/img_1.png">
+<img src="samples/img_2.png">
+<img src="samples/img_3.png">
+<img src="samples/img_4.png">
+<img src="samples/img_5.png">
+<img src="samples/img_6.png">
+<img src="samples/img_7.png">
+<img src="samples/img_8.png">
+<img src="samples/img_9.png">
+<img src="samples/img_10.png">
+<img src="samples/img_11.png">
+<img src="samples/img_12.png">
+<img src="samples/img_13.png">
+<img src="samples/img_14.png">
+</div>
