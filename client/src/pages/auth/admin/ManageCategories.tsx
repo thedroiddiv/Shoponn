@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
-import { Button, Container, Form, ListGroup } from 'react-bootstrap'
+import { Button, Card, Container, Form } from 'react-bootstrap'
+import { FiDelete } from 'react-icons/fi'
 import { createCategory } from '../../../data/api/adminApiCalls'
 import { getAllCategory } from '../../../data/api/coreApiCalls'
 import { CreateCategoryDto } from '../../../data/dto/CategoryDto'
@@ -36,7 +37,7 @@ function ManageCategories() {
 
     const handleSubmit = () => {
         if (user !== null) {
-            createCategory(user._id, token, category).then(res=> {
+            createCategory(user._id, token, category).then(res => {
                 setCategory({ name: "" })
                 preload()
             })
@@ -45,25 +46,27 @@ function ManageCategories() {
 
     return (
         <div className={`${bootstrap.backgroundColor} ${bootstrap.textColor}`} style={{ minHeight: "75vh" }}>
-            <Container className="mx-auto text-center">
-                <div className="">
-                    <h5>Create a new category here</h5>
-                    <Form>
-                        <div className="row px-5 mb-3">
-                            <Form.Group className="col-lg-8 col-md-8 col-sm-12" controlId="formBasicEmail">
-                                <Form.Control type="text" size="lg" placeholder="Enter category name" value={category.name} onChange={handleChange('name')} />
-                            </Form.Group>
-                            <Button variant="primary col-lg-4 col-md-4 col-sm-12" onClick={handleSubmit}>
-                                Submit
-                            </Button>
-                        </div>
-                    </Form>
+            <Container className="pt-3">
+                <Form className="col-4 mx-auto my-5 text-center">
+                    <h3>Create a new category</h3>
+                    <Form.Group className="row" controlId="formBasicEmail">
+                        <Form.Control className="col" type="text" placeholder="Enter category name" value={category.name} onChange={handleChange('name')} />
+                        <Button className="col-2" variant="primary" onClick={handleSubmit}>
+                            Submit
+                        </Button>
+                    </Form.Group>
+                </Form>
+                <div>
+                    <h5 className="text-center">All Categories</h5>
+                    <div className="row">
+                        {categories.map((category: Category) => (
+                            <Card className={`${bootstrap.cardBackground} ${bootstrap.textColor} p-3 my-3 mx-auto`} style={{ width: "250px" }} >
+                                {category.name}
+                                <button className={`btn ${bootstrap.textColor}`} style={{ position: "absolute", right: "0", top: "0", bottom: "0" }} onClick={() => { }}><FiDelete /></button>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
-                <ListGroup>
-                    {categories.map((category: Category) => (
-                        <ListGroup.Item>{category.name}</ListGroup.Item>
-                    ))}
-                </ListGroup>
             </Container>
         </div>
     )

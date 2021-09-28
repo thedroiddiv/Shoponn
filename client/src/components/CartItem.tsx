@@ -21,7 +21,7 @@ function CartItem({ product, preload, removeFromCart, increment, decrement }: ca
     <div className={`card mb-3 ${bootstrap.textColor} ${bootstrap.cardBackground}`}>
       <div className="row g-0">
         <div className="col-md-5">
-          <img src={getImage(product._id)} className="img-fluid card-img rounded-start" />
+          <img src={getImage(product._id)} className="img-fluid card-img rounded-start" alt="..." />
         </div>
         <div className="col-md-7">
           <div className="card-body">

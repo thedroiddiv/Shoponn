@@ -22,12 +22,12 @@ function Topbar({ history }: Props) {
         if (history.location.pathname === path) {
             return bootstrap.selectedTabColor
         }
-        return bootstrap.topBarText
+        return bootstrap.topBarText;
     }
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg={bootstrap.topBarColor} variant={bootstrap.topBarVarient}>
+            <Navbar collapseOnSelect expand="lg" className={`${bootstrap.backgroundColor}`} variant={bootstrap.topBarVarient}>
                 <Container>
                     <Navbar.Brand>
                         <Link to="/" style={{ textDecoration: "none" }} className={`${currentTab("/")}`}>

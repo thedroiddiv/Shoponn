@@ -25,11 +25,11 @@ function Home() {
 
     return (
         <div className={`${bootstrap.backgroundColor}`}>
-            <Featured products={[]} />
+            <Featured products={products} />
             <div className="container">
                 <div className="row">
                     {products.map((product: Product) => (
-                        <div className="col-sm-12 col-md-6 col-lg-3 my-4 mx-auto">
+                        <div key={product._id} className="col-sm-12 col-md-6 col-lg-3 my-4 mx-auto">
                             <ProductCard product={product} />
                         </div>
                     ))}

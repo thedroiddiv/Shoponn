@@ -30,7 +30,7 @@ function ProductDetails() {
                     .then(res => setCategory(res as Category))
             })
             .catch(error => console.log(`ProductDetails/useEffect/${error}`))
-    }, [])
+    })
     const [quantity, setQuantity] = useState(1);
     const { bootstrap } = getTheme(useContext(ThemeContext)[0])
 

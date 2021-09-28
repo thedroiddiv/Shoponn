@@ -24,10 +24,15 @@ function getUser(req, res) {
 
 function getAllUser(req, res) {
     User.find().exec((err, users) => {
+        const resUser = users.map(user => {
+            user.encry_password = undefined;
+            user.salt = undefined;
+            return user
+        })
         if (err || !users) {
             return res.status(400).json({ error: "No user" })
         }
-        return res.json(users)
+        return res.json(resUser)
     })
 }
 

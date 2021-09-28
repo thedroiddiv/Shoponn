@@ -16,6 +16,7 @@ import AdminDashboard from '../pages/auth/admin/AdminDashboard';
 import AddProduct from '../pages/auth/admin/AddProduct';
 import ManageProducts from '../pages/auth/admin/ManageProducts';
 import ManageCategories from '../pages/auth/admin/ManageCategories';
+import ManageUsers from '../pages/auth/admin/ManageUsers';
 
 function Routes() {
     const themeHook = useState(useContext(ThemeContext)[0]);
@@ -38,6 +39,7 @@ function Routes() {
                             <AdminRoute path="/admin/product/add/" exact component={AddProduct} />
                             <AdminRoute path="/admin/product/manage/" exact component={ManageProducts} />
                             <AdminRoute path="/admin/category/manage" exact component={ManageCategories} />
+                            <AdminRoute path="/admin/user/manage" exact component={ManageUsers} />
 
                             <ProtectedRoute path="/user/dashboard/" exact component={UserDashboard} />
 
