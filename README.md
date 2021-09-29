@@ -11,6 +11,14 @@
 </ul>
 git 
 
+### At first install all the dependencies
+<ol>
+<li>inside root package, run</li>
+<li>"npm install" ***[this will install all the dependencies for backend]***</li>
+<li>move to cliend package, "cd client/", then run</li>
+<li>"npm install"  ***[this will install all the dependencies for react frontend]***</li>
+</ol>
+
 ### To start the project in development mode
 <ol>
 <li>inside root package, run</li>

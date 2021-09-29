@@ -2,11 +2,11 @@
   "name": "shoponn-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "app.js",
   "scripts": {
     "prod": "cd client/ && npm run build && cd ../ && node src/app.js",
     "dev": "nodemon src/app.js",
-    "start":"node scr/app.js"
+    "start": "node src/app.js"
   },
   "author": "divyansh",
   "license": "ISC",

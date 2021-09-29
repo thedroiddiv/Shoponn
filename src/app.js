@@ -26,7 +26,7 @@ mongoose.connect(
         useUnifiedTopology: true,
     }
 ).then(() => { console.log("CONNECTED_TO_MONGO_DB") })
-    .catch(error => { console.log(`DATABASE_CONNECTION_ERROR ${error}`) })
+    .catch(error => { console.log(`DATABASE_CONNECTION_ERROR\n${error}`) })
 
 // middlewares
 app.use(bodyParser.json())
