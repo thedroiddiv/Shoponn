@@ -1,4 +1,6 @@
 # Shoponn
+### Deployment site
+<a href="https://shoponn.herokuapp.com/">https://shoponn.herokuapp.com/</a>
 
 ### Required environment variables
 <ul>
@@ -9,7 +11,7 @@
 <li>BRAINTREE_PRIVATE_KEY=[***********]</li>
 <li>BRAINTREE_MERCHANT_ID=[***********]</li>
 </ul>
-git 
+
 
 ### At first install all the dependencies
 <ol>
