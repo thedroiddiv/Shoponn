@@ -1,6 +1,6 @@
 # Shoponn
 ### Deployment site
-<a href="https://shoponn.herokuapp.com/">https://shoponn.herokuapp.com/</a>
+<a href="https://shoponn.herokuapp.com/" target="_blank">https://shoponn.herokuapp.com/</a>
 
 ### Required environment variables
 <ul>
