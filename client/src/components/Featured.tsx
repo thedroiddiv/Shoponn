@@ -16,7 +16,7 @@ function Featured({ products }: FeaturedProps) {
     };
     return (
         <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
-            {products.map((product: Product) => (
+            {products!==undefined && products.map((product: Product) => (
                 <Carousel.Item className="carousel" key={product._id}>
                 <Link style={{textDecoration:"none"}} to={`/product/${product._id}`}>
                     <Ratio aspectRatio="16x9">

@@ -6,7 +6,7 @@ export const getAllCategory = () => {
             return res.json()
         })
         .catch(error => {
-            console.log("adminapicall/getAllCategory/" + error);
+            console.log("coreApiCalls/getAllCategory/" + error);
         })
 }
 
@@ -16,7 +16,7 @@ export const getCategoryById = (id:string) => {
     return fetch(`${API}/category/${id}`)
     .then(res => res.json())
     .catch(error => {
-        console.log("adminapicall/getCategoryById/" + error);
+        console.log("coreApAcalls/getCategoryById/" + error);
     })
 }
 
@@ -24,7 +24,7 @@ export const getAllProducts = () => {
     return fetch(`${API}/product/get/all`)
         .then(res => res.json())
         .catch(error => {
-            console.log("adminapicall/getAllCategory/" + error);
+            console.log("coreApAcalls/getAllCategory/" + error);
         })
 }
 
@@ -34,7 +34,7 @@ export const getProduct = (productId: string) => {
         .then(res => {
             return res.json()
         })
-        .catch(error => console.log("adminapicall/getProduct/" + error))
+        .catch(error => console.log("coreApAcalls/getProduct/" + error))
 }
 
 export const getImage = (productId: string) => (`${API}/product/photo/${productId}`)

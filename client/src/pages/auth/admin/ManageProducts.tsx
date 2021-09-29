@@ -24,6 +24,7 @@ function ManageProducts() {
         getAllProducts()
             .then(res => {
                 setProducts(res as Product[])
+                setFeaturedProducts(res as Product[])
             })
     }
 

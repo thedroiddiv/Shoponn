@@ -13,7 +13,10 @@ function Home() {
     const preload = ()  => {
         getAllProducts()
         .then(res => {
-            setProducts(res as Product[])
+            const p = res as Product[]            
+            if(p!==undefined) {
+                setProducts(p)
+            }
         })
         .catch(error => {
             console.log(`Home/preload/${error}`)
